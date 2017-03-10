@@ -19,7 +19,7 @@ alert = #bd2c40
 white = #d1d1d1
 gray = #585858
 black = #090909
-red = #c795ae
+red = #c60707
 blue = #95aec7
 yellow = #c7ae95
 green = #aec795
@@ -60,9 +60,9 @@ font-1 = unifont:fontformat=truetype:size=20:heavy;-2
 font-2 = FontAwesome:pixelsize=20
 
 
-modules-right = updates filesystem battery date powermenu
-modules-center = mpd volume
-modules-left = i3 wlan eth cpu memory xkeyboard
+modules-right = date cpu memory filesystem battery powermenu
+modules-center = xwindow
+modules-left = i3 eth xkeyboard
 # modules-left = xwindow
 # modules-center = i3
 # modules-right = volume xkeyboard memory cpu wlan eth battery temperature date powermenu
@@ -107,9 +107,9 @@ font-1 = unifont:fontformat=truetype:size=20:heavy;-2
 font-2 = FontAwesome:pixelsize=20
 
 
-modules-right = updates filesystem battery date powermenu
+modules-right = date cpu memory filesystem battery powermenu
 modules-center = mpd volume
-modules-left = i3 wlan eth cpu memory xkeyboard
+modules-left = i3 eth xkeyboard
 # modules-left = xwindow
 # modules-center = i3
 # modules-right = volume xkeyboard memory cpu wlan eth battery temperature date powermenu
@@ -143,8 +143,9 @@ label = %title:0:30:...%
 [module/xkeyboard]
 type = internal/xkeyboard
 blacklist-0 = num lock
-label-layout = %{F#55}%{F-} %layout%
-label-layout-underline = ${colors.secondary}
+label-layout = %name%
+#label-layout = %{F#55}%{F-} %layout%
+#label-layout-underline = ${colors.secondary}
 label-indicator-padding = 2
 label-indicator-margin = 1
 label-indicator-background = ${colors.secondary}
@@ -160,7 +161,7 @@ mount-1 = /home
 
 #label-mounted = %mountpoint%: %percentage_free%%
 label-mounted =  %free%
-label-mounted-underline = ${colors.white}
+#label-mounted-underline = ${colors.white}
 label-mounted-padding = 1
 
 label-unmounted = %mountpoint%: not mounted
@@ -292,15 +293,15 @@ ramp-coreload-underline = ${colors.white}
 type = internal/cpu
 interval = 2
 label = %{F${colors.white}  %percentage% %{F-}
-label-underline = ${colors.white}
+#label-underline = ${colors.white}
 padding= 2
 
 [module/memory]
 type = internal/memory
 interval = 3
 ; format = <label> <bar-used>
-label = %{F${colors.white}  %percentage_used% %{F-}
-label-underline = ${colors.white}
+label = %{F${colors.white}  %percentage_used% %{F-}
+#label-underline = ${colors.white}
 label-foreground = ${colors.white}
 
 [module/wlan]
@@ -309,8 +310,8 @@ interface = wlp7s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #9f78e1
-format-disconnected-underline = ${self.format-connected-underline}
+#format-connected-underline = #9f78e1
+format-disconnected-underline = ${colors.red}
 
 label-connected = %essid%
 label-disconnected = %ifname% disconnected
@@ -339,12 +340,12 @@ type = internal/network
 interface = enp0s31f6
 interval = 3.0
 
-format-connected-underline = #55aa55
+#format-connected-underline = #55aa55
 format-connected-prefix = " "
 format-connected-foreground-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
 
-format-disconnected-underline = ${self.format-connected-underline}
+format-disconnected-underline = ${colors.red}
 label-disconnected = %ifname% disconnected
 label-disconnected-foreground = ${colors.foreground-alt}
 
@@ -353,11 +354,11 @@ type = internal/date
 interval = 5
 
 date-alt =   %A %H:%M 
-date =   %b/%d/%y %H:%M 
+date =   %I:%M   %a %b/%d/%y 
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = ${colors.white}
+#format-underline = ${colors.white}
 
 label = %date% %time%
 
@@ -426,7 +427,7 @@ thermal-zone = 0
 warn-temperature = 65
 
 format = <label>
-format-underline = ${colors.white}
+#format-underline = ${colors.white}
 format-warn = <label-warn>
 format-warn-underline = ${colors.red}
 
@@ -458,7 +459,7 @@ label-warn =  %temperature%
 type = custom/menu
 
 format = <label-toggle> <menu>
-format-underline = ${colors.white}
+format-underline = ${colors.red}
 format-padding = 2
 #format-spacing = 1
 

@@ -28,10 +28,20 @@ font pango:monospace 8
 # gaps
 for_window [class="^.*"] border pixel 0
 gaps inner 10
-gaps outer 25
+gaps outer 15
 
 ################### DUAL SCREEN ######################
 #execute xrandr --output HDMI-0 --left-of DVI-I-1
+workspace 1 output HDMI-0
+workspace 3 output HDMI-0
+workspace 5 output HDMI-0
+workspace 7 output HDMI-0
+workspace 9 output HDMI-0
+workspace 2 output DVI-I-1
+workspace 4 output DVI-I-1
+workspace 6 output DVI-I-1
+workspace 8 output DVI-I-1
+workspace 10 output DVI-I-1
     
 # use these keys for focus, movement, and resize directions when reaching for
 # the arrows is not convenient
@@ -136,6 +146,11 @@ bindsym Mod1+Shift+7 move container to workspace 7
 bindsym Mod1+Shift+8 move container to workspace 8
 bindsym Mod1+Shift+9 move container to workspace 9
 bindsym Mod1+Shift+0 move container to workspace 10
+
+# workspace assignments
+for_window [class="Spotify"] move to workspace 10
+assign [class="Google-chrome"] 2
+assign [class="Code"] 1
 
 # Pulse Audio controls
 # set $audio_sink = 1

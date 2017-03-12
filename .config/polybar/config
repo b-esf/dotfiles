@@ -365,7 +365,7 @@ label = %date% %time%
 [module/volume]
 type = internal/volume
 
-#master_mixer = Master
+master_mixer = Master
 
 format-volume = <label-volume> <bar-volume>
 label-volume = VOL

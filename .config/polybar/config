@@ -29,7 +29,7 @@ margin-top = 5
 margin-bottom = 5
 
 [bar/LeftMonitorTop]
-monitor = ${env:MONITOR:HDMI-0}
+monitor = ${env:MONITOR:DVI-D-0}
 width = 100%
 height = 27
 offset-x = 0
@@ -60,9 +60,9 @@ font-1 = unifont:fontformat=truetype:size=20:heavy;-2
 font-2 = FontAwesome:pixelsize=20
 
 
-modules-right = date cpu memory filesystem battery powermenu
+modules-right = cpu memory filesystem battery powermenu
 modules-center = xwindow
-modules-left = i3 eth xkeyboard
+modules-left = i3 eth xkeyboard date
 # modules-left = xwindow
 # modules-center = i3
 # modules-right = volume xkeyboard memory cpu wlan eth battery temperature date powermenu
@@ -76,7 +76,7 @@ tray-padding =
 
 [bar/RightMonitorTop]
 #monitor = ${env:MONITOR:HDMI-1}
-monitor = ${env:MONITOR:DVI-I-1}
+monitor = ${env:MONITOR:DP-0}
 width = 100%
 height = 27
 offset-x = 0
@@ -107,9 +107,9 @@ font-1 = unifont:fontformat=truetype:size=20:heavy;-2
 font-2 = FontAwesome:pixelsize=20
 
 
-modules-right = date cpu memory filesystem battery powermenu
+modules-right = cpu memory filesystem battery powermenu
 modules-center = mpd volume
-modules-left = i3 eth xkeyboard
+modules-left = i3 eth xkeyboard date
 # modules-left = xwindow
 # modules-center = i3
 # modules-right = volume xkeyboard memory cpu wlan eth battery temperature date powermenu
@@ -294,7 +294,7 @@ type = internal/cpu
 interval = 2
 label = %{F${colors.white}  %percentage% %{F-}
 #label-underline = ${colors.white}
-padding= 2
+# padding= 2
 
 [module/memory]
 type = internal/memory

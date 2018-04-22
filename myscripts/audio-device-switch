@@ -38,3 +38,8 @@ do
     fi
     let ndx++
 done;
+
+exec killall -q polybar
+exec polybar LeftMonitorTop
+exec polybar RightMonitorTop
+

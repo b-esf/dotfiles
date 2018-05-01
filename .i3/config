@@ -224,10 +224,13 @@ bindsym Mod1+r mode "resize"
 exec i3-config-wizard
 
 # startup
+exec_always --no-startup-id ~/myscripts/startup.sh
 
 #set monitor position
-#exec --no-startup-id xrandr --output DVI-D-0 --right-of DP-0
+#exec_always xrandr --no-startup-id --output DVI-D-0 --right-of DP-0
+
+#restore backgrounds
+#exec_always nitrogen --no-startup-id --restore
+
 #launch polybar
 exec_always --no-startup-id .config/polybar/launch.sh
-#restore backgrounds
-exec nitrogen --no-startup-id --restore

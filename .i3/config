@@ -32,16 +32,16 @@ gaps outer 15
 
 ################### DUAL SCREEN ######################
 #execute xrandr --output HDMI-0 --left-of DVI-I-1
-workspace 1 output HDMI-0
-workspace 3 output HDMI-0
-workspace 5 output HDMI-0
-workspace 7 output HDMI-0
-workspace 9 output HDMI-0
-workspace 2 output DVI-I-1
-workspace 4 output DVI-I-1
-workspace 6 output DVI-I-1
-workspace 8 output DVI-I-1
-workspace 10 output DVI-I-1
+workspace 1 output DP-0
+workspace 3 output DP-0
+workspace 5 output DP-0
+workspace 7 output DP-0
+workspace 9 output DP-0
+workspace 2 output DVI-D-0
+workspace 4 output DVI-D-0
+workspace 6 output DVI-D-0
+workspace 8 output DVI-D-0
+workspace 10 output DVI-D-0
     
 # use these keys for focus, movement, and resize directions when reaching for
 # the arrows is not convenient
@@ -224,4 +224,10 @@ bindsym Mod1+r mode "resize"
 exec i3-config-wizard
 
 # startup
+
+#set monitor position
+#exec --no-startup-id xrandr --output DVI-D-0 --right-of DP-0
+#launch polybar
 exec_always --no-startup-id .config/polybar/launch.sh
+#restore backgrounds
+exec nitrogen --no-startup-id --restore
